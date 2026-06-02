@@ -61,6 +61,8 @@ Example: Batch: 19
 Technologies Used: - Python - Kafka - Docker - PySpark - Spark
 Structured Streaming - JSON
 
+Checkpointing was validated by stopping the consumer, allowing the producer to continue sending events, restarting the consumer, and confirming that Spark resumed from the last processed Kafka offset.
+
 Key Learnings: - Kafka Producer Development - Kafka Topic Management -
 Real-Time Event Streaming - Spark Structured Streaming - JSON Schema
 Processing - Docker-based Kafka Setup
