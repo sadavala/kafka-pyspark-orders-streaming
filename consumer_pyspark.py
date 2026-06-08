@@ -30,7 +30,7 @@ kafka_df = spark.readStream \
     .format("kafka") \
     .option("kafka.bootstrap.servers", "localhost:9092") \
     .option("subscribe", "orders") \
-    .option("startingOffsets", "latest") \
+    .option("startingOffsets", "latest") \ #Ignore old records and Start from newest records
     .load()
 
 orders_df = kafka_df.selectExpr("CAST(value AS STRING)") \
